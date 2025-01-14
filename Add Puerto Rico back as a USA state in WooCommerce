@@ -62,9 +62,7 @@ function usa_states_modify ( $states ) {
         'OK' => __( 'Oklahoma', 'woocommerce' ),
         'OR' => __( 'Oregon', 'woocommerce' ),
         'PA' => __( 'Pennsylvania', 'woocommerce' ),
-        // Add Puerto Rico here
         'PR' => __( 'Puerto Rico', 'woocommerce' ), 
-        // Remaining states
         'RI' => __( 'Rhode Island', 'woocommerce' ),
         'SC' => __( 'South Carolina', 'woocommerce' ),
         'SD' => __( 'South Dakota', 'woocommerce' ),
@@ -73,6 +71,7 @@ function usa_states_modify ( $states ) {
         'UT' => __( 'Utah', 'woocommerce' ),
         'VT' => __( 'Vermont', 'woocommerce' ),
         'VA' => __( 'Virginia', 'woocommerce' ),
+        
         // Add Armed Forces states
         // Armed Forces options
         // These are not technically states but can be useful in a dropdown
