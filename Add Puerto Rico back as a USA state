@@ -1,0 +1,21 @@
+# Adding Puerto Rico back as a USA state in WooCommerce and removing it as a country
+## Tested with WooCommerce Version: +9.5.1
+## Tested with WooCommerce Subscriptions Version: +7.0.1
+
+We recently encountered an issue affecting one of our USA-based clients who operates a WooCommerce website. 
+A customer reported that Puerto Rico was not listed as a USA state in the dropdown menu when selecting states. After conducting thorough research, we discovered that Puerto Rico had been removed as a state and added as a country, which can make things difficult for the current store setups. 
+To resolve this problem, we implemented a solution by adding custom code to the functions.php file. This adjustment involved removing Puerto Rico from the country list and re-adding it as a state within the United States. 
+As a result, Puerto Rico now displays correctly throughout the site, including in the cart, checkout, and shipping zones. We hope this will help anyone in a similar situation.
+
+
+// Code to remove Puerto Rico as a country and re-add it as a US state
+function modify_shipping_locations( $locations ) {
+    // Remove Puerto Rico from country list
+    unset( $locations['PR'] );
+
+    // Add Puerto Rico as a state
+    $locations['US']['PR'] = 'Puerto Rico';
+
+    return $locations;
+}
+add_filter( 'woocommerce_countries', 'modify_shipping_locations' );
